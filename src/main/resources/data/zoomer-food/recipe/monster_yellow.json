@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:potion",
+    "minecraft:yellow_dye"
+  ],
+  "result": {
+    "id": "zoomer-food:monster_yellow",
+    "count": 1
+  }
+}

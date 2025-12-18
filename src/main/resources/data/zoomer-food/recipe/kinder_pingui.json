@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:cocoa_beans",
+    "minecraft:milk_bucket"
+  ],
+  "result": {
+    "id": "zoomer-food:kinder_pingui",
+    "count": 2
+  }
+}
