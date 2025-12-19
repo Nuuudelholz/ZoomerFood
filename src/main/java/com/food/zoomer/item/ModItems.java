@@ -2,18 +2,13 @@ package com.food.zoomer.item;
 
 import com.food.zoomer.ZoomerFood;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.component.type.Consumable;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipAppender;
-import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import javax.swing.*;
@@ -21,13 +16,13 @@ import javax.swing.*;
 
 public class ModItems {
 
-    public static final Item KINDER_PINGUI = foodItem("kinder_pingui", ModFoodComponents.SWEET_FOOD_COMPONENT);
-    public static final Item MONSTER_GREEN = foodItem("monster_green", ModFoodComponents.NOTHING, ModConsumableComponents.GREEN_MONSTER_CONSUMABLE_COMPONENT);
-    public static final Item MONSTER_WHITE = foodItem("monster_white", ModFoodComponents.NOTHING, ModConsumableComponents.WHITE_MONSTER_CONSUMABLE_COMPONENT);
-    public static final Item MONSTER_BLUE = foodItem("monster_blue", ModFoodComponents.NOTHING, ModConsumableComponents.BLUE_MONSTER_CONSUMABLE_COMPONENT);
-    public static final Item MONSTER_YELLOW = foodItem("monster_yellow", ModFoodComponents.NOTHING, ModConsumableComponents.YELLOW_MONSTER_CONSUMABLE_COMPONENT);
+    public static final Item KINDER_PINGUI = registerFoodItem("kinder_pingui", ModFoodComponents.SWEET_FOOD_COMPONENT);
+    public static final Item MONSTER_GREEN = registerFoodItem("monster_green", ModFoodComponents.NOTHING, ModConsumableComponents.GREEN_MONSTER_CONSUMABLE_COMPONENT);
+    public static final Item MONSTER_WHITE = registerFoodItem("monster_white", ModFoodComponents.NOTHING, ModConsumableComponents.WHITE_MONSTER_CONSUMABLE_COMPONENT);
+    public static final Item MONSTER_BLUE = registerFoodItem("monster_blue", ModFoodComponents.NOTHING, ModConsumableComponents.BLUE_MONSTER_CONSUMABLE_COMPONENT);
+    public static final Item MONSTER_YELLOW = registerFoodItem("monster_yellow", ModFoodComponents.NOTHING, ModConsumableComponents.YELLOW_MONSTER_CONSUMABLE_COMPONENT);
 
-    private static Item foodItem(String name, FoodComponent food, ConsumableComponent component) {
+    private static Item registerFoodItem(String name, FoodComponent food, ConsumableComponent component) {
         Identifier id = Identifier.of(ZoomerFood.MOD_ID, name);
 
         Item item = new Item(
@@ -39,7 +34,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM, id, item);
     }
 
-    private static Item foodItem(String name, FoodComponent food) {
+    private static Item registerFoodItem(String name, FoodComponent food) {
         Identifier id = Identifier.of(ZoomerFood.MOD_ID, name);
 
         Item item = new Item(
